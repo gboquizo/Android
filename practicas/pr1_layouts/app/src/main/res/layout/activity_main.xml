@@ -4,34 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:padding="20dp">
+    android:padding="10dp">
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_weight="1"
-        android:layout_margin="5dp"
+        android:layout_margin="3dp"
         android:text="Botón 1" />
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_weight="1"
-        android:layout_margin="5dp"
+        android:layout_margin="3dp"
         android:text="Botón 2" />
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_weight="1"
-        android:layout_margin="5dp"
+        android:layout_margin="3dp"
         android:text="Botón 3" />
 
     <Button
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_weight="1"
-        android:layout_margin="5dp"
+        android:layout_margin="3dp"
         android:text="Botón 4" />
 
 </LinearLayout>
