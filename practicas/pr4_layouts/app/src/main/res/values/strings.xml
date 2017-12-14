@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">pr4_layouts</string>
+    <string name="texto">text1:This is some text. In this text are some things that are actionable.
+        For instance, you can click on <string name="google1"><a href="http://www.google.com">http://www.google.com.</a></string>
+        and it will launch the web browser. You can click on <string name="google2"><a href="http://www.google.com">google.com</a></string>
+    too.And if you click on (415)555-1212 it should dial the phone. <string name="capitan"><a href="http://www.iesgrancapitan.org/portal/">iesgrancapitan.org</a></string></string>
+    <string name="elpais.es"><a href="https://elpais.com/">elpais.es</a></string>
+</resources>

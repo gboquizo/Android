@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Mi primera aplicación</string>
+    <string name="msg">dzień dobry kocham cię</string>
+    <string name="msg2">Hola mundo, probando Android Studio, esto es Jackass</string>
+</resources>

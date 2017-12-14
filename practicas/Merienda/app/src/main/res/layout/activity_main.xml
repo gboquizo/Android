@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple"
+    tools:context="com.android.guillermo.merienda.MainActivity"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_weight="10"
+        android:src="@drawable/before_cookie">
+
+    </ImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="30"
+        android:background="@color/purple"
+        android:padding="10dp">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/before"
+        android:textColor="#FFF"
+        android:textSize="40dp"
+        />
+
+    <Button
+        android:id="@+id/btncookie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eat"
+        android:layout_below="@+id/textView"
+        android:textColor="#FFF"
+        android:background="#278acb"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Merienda</string>
+    <string name="before">¡Tengo hambre!</string>
+    <string name="eat">COMER GALLETA</string>
+</resources>

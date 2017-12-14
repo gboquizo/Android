@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pedir café</string>
+    <string name="textNombre">Nombre</string>
+    <string name="textToppings">TOPPINGS</string>
+    <string name="textCrema">Crema</string>
+    <string name="textChocolate">Chocolate</string>
+    <string name="textCantidad">Cantidad</string>
+</resources>
