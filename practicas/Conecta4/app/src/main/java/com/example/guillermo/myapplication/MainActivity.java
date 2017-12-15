@@ -66,10 +66,6 @@ public class MainActivity extends AppCompatActivity {
                     //else
                         //mostrarMensajeGanador();
                 }
-                if (juego.getTurno() == juego.MAQUINA && juego.estado != "Terminado") {
-                    int col = juego.maquinaRespondeMovimientoA(j);
-                    jugar(col);
-                }
             }
         }
     }

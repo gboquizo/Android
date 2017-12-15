@@ -94,24 +94,6 @@ public class Game {
         return false;
     }
 
-    int maquinaRespondeMovimientoA(int columna) {
-        String fila;
-        int col;
-        for (int i = 0; i < NFILAS; i++) {
-            fila = "";
-            for (int j = 0; j < NFILAS; j++) {
-                fila += tablero[i][j];
-                col = j;
-                if (fila.contains(PATRONGANADOR_A) && col != (NCOLUMNAS - 1) && tablero[i][col + 1] == VACIO)
-                    return col + 1;
-                if (fila.contains(PATRONGANADOR_A) && (col - 3) >= 0 && tablero[i][col - 3] == VACIO)
-                    return col - 3;
-            }
-        }
-
-        return columna;
-    }
-
     String mostrarTablero() {
         String mensaje = "";
         for (int i = 0; i < NFILAS; i++) {
