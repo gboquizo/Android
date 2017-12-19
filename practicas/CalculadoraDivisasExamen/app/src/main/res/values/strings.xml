@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Calculadora de Divisas</string>
+    <string name="valor">Introduce una cifra</string>
+    <string name="total">Conversión:</string>
+</resources>

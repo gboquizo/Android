@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.example.guillermo.calculadoradivisasexamen.CalculadoraDivisas">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/valor"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/cantidad"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:textColor="@android:color/background_dark"
+            android:layout_marginLeft="25dp"
+            android:hint="0"
+            android:textAlignment="center" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/conversionyuaneseseuros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/conversionyuanaeuro"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="Euro/Yuan" />
+
+        <ImageView
+            android:id="@+id/bandera1"
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/europa" />
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:background="@drawable/china"
+            android:id="@+id/bandera2"/>
+
+        <Button
+
+            android:id="@+id/conversioneuroyuan"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Yuan/Euro" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/conversiondolareseuros"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1">
+
+        <Button
+
+            android:id="@+id/conversiondolareuro"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="Euro/Dolar" />
+
+        <ImageView
+            android:id="@+id/bandera3"
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/europa" />
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:background="@drawable/eeuu"
+            android:id="@+id/bandera4"/>
+
+        <Button
+            android:id="@+id/conversioneurodolar"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Dolar/Euro" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/conversioneuroslibras"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/conversionlibraeuro"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="Euro/Libra" />
+
+        <ImageView
+            android:id="@+id/bandera5"
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/europa" />
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:background="@drawable/uk"
+            android:id="@+id/bandera6"/>
+
+        <Button
+            android:id="@+id/conversioneurolibra"
+
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Libra/Euro" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/conversiondolareslibras"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1">
+
+        <Button
+
+            android:id="@+id/conversionlibradolar"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="Dolar/Libra" />
+
+        <ImageView
+            android:id="@+id/bandera7"
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/eeuu" />
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:background="@drawable/uk"
+            android:id="@+id/bandera8"/>
+
+        <Button
+            android:id="@+id/conversiondolarlibra"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Libra/Dolar" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/conversiondolaresyuanes"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/conversionyuandolar"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="Dolar/Yuan" />
+
+        <ImageView
+            android:id="@+id/bandera9"
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/eeuu" />
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:background="@drawable/china"
+            android:id="@+id/bandera10"/>
+
+        <Button
+            android:id="@+id/conversiondolaryuan"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Yuan/Dolar" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/conversionlibrasyuanes"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/conversionyuanlibra"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="Libra/Yuan" />
+
+        <ImageView
+            android:id="@+id/bandera11"
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/uk" />
+        <ImageView
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:background="@drawable/china"
+            android:id="@+id/bandera12"/>
+
+        <Button
+            android:id="@+id/conversionlibrayuan"
+            style="@style/EstiloBotonEscucha"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Yuan/Libra" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/background_dark"
+            android:text="@string/total"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/total"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="@android:color/background_dark"
+            android:hint="0"/>
+    </LinearLayout>
+
+</LinearLayout>

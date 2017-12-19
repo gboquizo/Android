@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="7"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/background_light"
+    android:visibility="visible"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/holo_blue_light"
+        android:orientation="vertical">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:text="A:"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                />
+
+
+            <ImageView
+                android:id="@+id/cabecera1"
+                style="@style/EstiloBoton"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:textAlignment="center"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/europa"
+               />
+
+            <ImageView
+                android:id="@+id/cabecera2"
+                style="@style/EstiloBoton"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/eeuu"
+                />
+
+            <ImageView
+                android:id="@+id/cabecera3"
+                style="@style/EstiloBoton"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:textAlignment="center"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/uk"
+                />
+
+            <ImageView
+                android:id="@+id/cabecera4"
+                style="@style/EstiloBoton"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:textAlignment="center"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/china"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="25dp">
+
+            <ImageView
+                android:id="@+id/bandera1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/europa" />
+
+            <EditText
+                android:id="@+id/txtView1"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="1.00000"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txtView2"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="0.84812"
+                android:textColor="@android:color/background_dark"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+
+            <EditText
+                android:id="@+id/txtView3"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="1.13514"
+                android:textColor="@android:color/background_dark"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+
+            <EditText
+                android:id="@+id/txtView4"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="0.12823"
+                android:textColor="@android:color/background_dark"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:id="@+id/bandera13"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/eeuu" />
+
+            <EditText
+                android:id="@+id/txtView5"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="1.17965"
+                android:textColor="@android:color/background_dark"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+
+            <EditText
+                android:id="@+id/txtView6"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="1.00000"
+                android:textColor="@android:color/background_dark"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+
+            <EditText
+                android:id="@+id/txtView7"
+                style="@style/EstiloBoton"
+                android:layout_width="56dp"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="1.33899"
+                android:textColor="@android:color/background_dark"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+
+            <EditText
+                android:id="@+id/txtView8"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="0.15115"
+                android:textColor="@android:color/background_dark"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:id="@+id/bandera3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/uk" />
+
+            <EditText
+                android:id="@+id/txtView9"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="0.88082"
+                android:textColor="@android:color/background_dark"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txtView10"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="0.74679"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                android:textColor="@android:color/background_dark"/>
+
+            <EditText
+                android:id="@+id/txtView11"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="1.00000"
+                android:textColor="@android:color/background_dark"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txtView12"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="0.11291"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:id="@+id/bandera4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/china" />
+
+            <EditText
+                android:id="@+id/txtView13"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="7.80365"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txtView14"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="6.61640"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txtView15"
+                style="@style/EstiloBoton"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="8.85819"
+                android:textColor="@android:color/background_dark"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/txtView16"
+                style="@style/EstiloBoton"
+                android:textColor="@android:color/background_dark"
+                android:background="@android:color/background_light"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:text="1.00000"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/buttonenviar"
+        android:layout_width="wrap_content"
+        android:background="@android:color/background_light"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="134dp"
+        android:text="Enviar"
+        android:hint="Pulse para enviar datos"
+        />
+</RelativeLayout>
