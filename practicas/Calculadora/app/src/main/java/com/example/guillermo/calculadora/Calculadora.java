@@ -9,8 +9,8 @@ import android.widget.TextView;
 public class Calculadora extends AppCompatActivity {
 
     private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9,
-            btnDiv, btnMult, btnRest, btnReset, btnComa, btnSuma, btnSigno, btnIgual;
-    private boolean suma, resta, mult, div = false;
+            btnDiv, btnMult, btnRest, btnReset, btnComa, btnSuma, btnSigno, btnIgual,btnPercentaje;
+    private boolean suma, resta, mult, div, percentaje = false;
     private double resultadoActual;
     private int i = 0;
     private TextView texto;
@@ -41,6 +41,7 @@ public class Calculadora extends AppCompatActivity {
         btnSuma = (Button) findViewById(R.id.buttonsum);
         btnSigno = (Button) findViewById(R.id.buttonsigno);
         btnIgual = (Button) findViewById(R.id.buttonequalize);
+        btnPercentaje = (Button) findViewById(R.id.buttonpercentage);
 
         btn0.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -159,6 +160,7 @@ public class Calculadora extends AppCompatActivity {
                 resta = false;
                 mult = false;
                 div = false;
+                percentaje = false;
                 cadena = "";
                 contadorComa = 0;
                 contadorSigno = 0;
@@ -178,6 +180,7 @@ public class Calculadora extends AppCompatActivity {
                 resta = true;
                 mult = false;
                 div = false;
+                percentaje = false;
                 cadena = "";
                 contadorComa = 0;
                 contadorSigno = 0;
@@ -196,6 +199,7 @@ public class Calculadora extends AppCompatActivity {
                 resta = false;
                 mult = true;
                 div = false;
+                percentaje = false;
                 cadena = "";
                 contadorComa = 0;
                 contadorSigno = 0;
@@ -214,7 +218,28 @@ public class Calculadora extends AppCompatActivity {
                 resta = false;
                 mult = false;
                 div = true;
+                percentaje = false;
                 cadena = "";
+                contadorComa = 0;
+                contadorSigno = 0;
+            }
+        });
+
+        btnPercentaje.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                i++;
+                if (i >= 2) {
+                    calcular();
+                } else {
+                    resultadoActual = Double.valueOf(texto.getText().toString());
+                }
+                i = 0;
+                suma = false;
+                resta = false;
+                mult = false;
+                div = false;
+                percentaje = true;
                 contadorComa = 0;
                 contadorSigno = 0;
             }
@@ -229,6 +254,7 @@ public class Calculadora extends AppCompatActivity {
                 resta = false;
                 mult = false;
                 div = false;
+                percentaje = false;
                 contadorComa = 0;
                 contadorSigno = 0;
             }
@@ -271,6 +297,11 @@ public class Calculadora extends AppCompatActivity {
             resultadoActual = resultadoActual / Double.valueOf(texto.getText().toString());
             texto.setText(String.valueOf(resultadoActual));
             div = false;
+        }
+        if (percentaje) {
+            resultadoActual = resultadoActual * Double.valueOf(texto.getText().toString()) / 100;
+            texto.setText(String.valueOf(resultadoActual));
+            percentaje = false;
         }
     }
 }
