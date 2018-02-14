@@ -1,8 +1,10 @@
 package com.example.guillermo.conecta4;
 public class Game {
 
+    //Tablero del juego.
     int[][] tablero;
 
+    //Constantes empleadas en el juego.
     static final int NFILAS = 6;
 
     static final int NCOLUMNAS = 7;
@@ -19,9 +21,11 @@ public class Game {
 
     static final String PATRONGANADOR_A = "222";
 
-
+    //Estado y ganador de la partida
     String estado = "Jugando";
     String ganador = "";
+
+    //Turno de la partida
     int turno;
 
     Game(int jugador) {
@@ -30,6 +34,23 @@ public class Game {
         iniciarTablero();
     }
 
+    //Comprueba si el tablero está vacio
+    boolean isVacio(int fila, int columna) {
+
+        return tablero[fila][columna] == VACIO;
+    }
+
+    //Setters y getters de turno
+    private void setTurno(int turno) {
+
+        this.turno = turno;
+    }
+
+    int getTurno() {
+        return turno;
+    }
+
+    //Rellena el tablero
     private void iniciarTablero() {
         for (int i = 0; i < NFILAS; i++) {
             for (int j = 0; j < NCOLUMNAS; j++) {
@@ -38,50 +59,46 @@ public class Game {
         }
     }
 
-    private void setTurno(int turno) {
-        this.turno = turno;
+    //Asigna la ficha
+    void setFicha(int i, int j) {
+        tablero[i][j] = this.turno;
     }
 
-    int getTurno() {
-        return turno;
-    }
-
+    //Cambia el turno
     void cambiarTurno(){
         this.setTurno(this.getTurno() == MAQUINA ? JUGADOR : MAQUINA);
         return;
     }
 
-    boolean isVacio(int fila, int columna) {
-        return tablero[fila][columna] == VACIO;
-    }
 
-    void setFicha(int i, int j) {
-        tablero[i][j] = this.turno;
-    }
 
+
+    //Recorre la fila
     String fila(int fila) {
-        String cadena = "";
+        String recorrido = "";
         for (int i = 0; i < NCOLUMNAS; i++) {
-            cadena += tablero[fila][i];
+            recorrido += tablero[fila][i];
         }
-        return cadena;
+        return recorrido;
     }
 
+    //Recorre la columna
     String columna(int columna) {
-        String cadena = "";
+        String recorrido = "";
         for (int i = 0; i < NFILAS - 1; i++) {
             for (int j = 0; j < NCOLUMNAS; j++) {
                 if (j == columna) {
-                    cadena = "";
+                    recorrido = "";
                     for (int k = 0; k < NFILAS; k++) {
-                        cadena += tablero[k][j];
+                        recorrido += tablero[k][j];
                     }
                 }
             }
         }
-        return cadena;
+        return recorrido;
     }
 
+    //Comprueba la diagonal izquierda
     String diagonalIzquierda(int fila, int columna) {
         String cadena = "";
         for (int i = fila, j= columna; i < NFILAS && j < NCOLUMNAS; i++, j++)
@@ -92,6 +109,7 @@ public class Game {
         return cadena;
     }
 
+    //Comprueba la diagonal derecha
     String diagonalDerecha(int fila, int columna) {
         String cadena = "";
         for (int i = fila, j= columna; i < NFILAS && j >= 0; i++, j--)
@@ -102,6 +120,7 @@ public class Game {
         return cadena;
     }
 
+    //Comprueba el resultado de la partida.
     boolean comprobarPartida(int fila, int columna) {
         if (fila(fila).contains(JUGADORGANA) || columna(columna).contains(JUGADORGANA)
                 || diagonalDerecha(fila, columna).contains(JUGADORGANA) || diagonalIzquierda(fila, columna).contains(JUGADORGANA)) {
@@ -113,6 +132,26 @@ public class Game {
             return true;
         }
         return false;
+    }
+
+    int maquinaRespondeMovimientoA(int columna) {
+        String fila;
+        int col;
+        for (int i = 0; i < NFILAS; i++) {
+            fila = "";
+            for (int j = 0; j < NCOLUMNAS; j++) {
+                fila += tablero[i][j];
+                col = j;
+
+                if (fila.contains(PATRONGANADOR_A) && col != (NCOLUMNAS - 1) && tablero[i][col + 1] == VACIO)
+                    return col + 1;
+                if (fila.contains(PATRONGANADOR_A) && (col - 3) >= 0 && tablero[i][col - 3] == VACIO)
+                    return col - 3;
+
+            }
+
+        }
+        return columna;
     }
 
     String mostrarTablero() {

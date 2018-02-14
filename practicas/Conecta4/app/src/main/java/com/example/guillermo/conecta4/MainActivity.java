@@ -1,10 +1,15 @@
 package com.example.guillermo.conecta4;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.preference.PreferenceManager;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -22,17 +27,57 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        int turno = Integer.valueOf(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("jugadorEmpieza","1"));
         juego = new Game(Game.JUGADOR);
+        if (juego.getTurno() == Game.MAQUINA && !juego.estado.equals("Terminado")) {
+            int col = juego.maquinaRespondeMovimientoA((int) Math.round(Math.random()*(6 - 0)));
+            jugar(col);
+        }
+
+        setTitle("Conecta 4");
     }
 
     protected void onResume(){
+        if(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("musica",true));
         super.onResume();
         Musica.play(this,R.raw.cancion);
     }
 
     protected void onPause(){
+        if(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("musica",true))
         super.onPause();
         Musica.stop(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    public boolean onOptionItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.menuAbout){
+
+            Intent acercaDe = new Intent(getApplicationContext(), About.class);
+            startActivity(acercaDe);
+
+            Intent acercaDes = new Intent(getApplicationContext(), About.class);
+            startActivity(acercaDes);
+
+            return true;
+        }else if (id == R.id.menuSendMessage) {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "Este es mi texto para enviar.");
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
+        }else if (id == R.id.menuSettings){
+            startActivity(new Intent(this, Settings.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     void pintarTablero(){
@@ -59,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
                     else
                         mostrarGanador();
                 }
+                if (juego.getTurno() == Game.MAQUINA && !juego.estado.equals("Terminado")) {
+                    int col = juego.maquinaRespondeMovimientoA(j);
+                    jugar(col);
+                }
             }
         }
     }
@@ -69,18 +118,17 @@ public class MainActivity extends AppCompatActivity {
                 if (juego.estado == "Jugando") {
                     juego.setFicha(i, j);
                     pintarFicha(i, j, juego.getTurno());
+                }
                     if (juego.comprobarPartida(i, j)) {
                         mostrarGanador();
                         juego.estado = "Terminado";
                     }
-                    juego.cambiarTurno();
-                } else if (juego.estado == "Terminado") {
+                juego.cambiarTurno();
+            } else if (juego.estado == "Terminado") {
                     mostrarGanador();
-                }
             }
         }
     }
-
     private void mostrarGanador() {
         AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AppTheme));
         if(juego.ganador == "Jugador") {
