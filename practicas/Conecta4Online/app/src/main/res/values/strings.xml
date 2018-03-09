@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Conecta4</string>
+    <string name="Online">Online</string>
+    <string name="Offline">Offline</string>
+    <string name="aceptar">Nueva partida</string>
+
+    <string name="salir">Salir</string>
+    <string name="mensajeTitulo">Partida Finalizada. ¿Otra partida?</string>
+
+    <string name="mensajeGanadorJugador">¡¡Has ganado!!</string>
+    <string name="mensajeGanadorMaquina">Has perdido</string>
+
+    <string name="about">Acerca de</string>
+    <string name="sendmessage">Enviar mensaje</string>
+    <string name="settings">Ajustes</string>
+
+    <string-array name="players">
+        <item>Humano</item>
+        <item>Máquina</item>
+    </string-array>
+    <string-array name="playersValues">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+</resources>
