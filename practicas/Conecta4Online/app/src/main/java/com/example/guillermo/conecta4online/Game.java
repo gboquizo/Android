@@ -118,6 +118,17 @@ public class Game {
         return diagonal;
     }
 
+    public boolean tableroLleno() {
+        for (int i=0; i<NFILAS;  i++){
+            for (int j=0; j<NCOLUMNAS;  j++){
+                if (tablero[i][j] == VACIO){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     //Comprueba el resultado de la partida.
     boolean comprobarPartida(int fila, int columna) {
         if (fila(fila).contains(JUGADORGANA) || columna(columna).contains(JUGADORGANA)
@@ -127,6 +138,10 @@ public class Game {
         } else if (fila(fila).contains(MAQUINAGANA) || columna(columna).contains(MAQUINAGANA)
                 || diagonalDerecha(fila, columna).contains(MAQUINAGANA) || diagonalIzquierda(fila, columna).contains(MAQUINAGANA)) {
             ganador = "Maquina";
+            return true;
+        }
+        else if(tableroLleno()){
+            ganador = "Empate";
             return true;
         }
         return false;

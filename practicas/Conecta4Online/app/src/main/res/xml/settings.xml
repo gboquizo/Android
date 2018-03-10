@@ -5,9 +5,10 @@
         android:title="Multimedia"
         >
         <CheckBoxPreference
-            android:key="music"
-            android:title="Activar musica"
-            android:defaultValue="true" />
+            android:key="musica"
+            android:title="Reproductor música"
+            android:summary="Se reproduce música de fondo"
+            android:defaultValue="false"/>
     </PreferenceCategory>
 
 
@@ -18,6 +19,7 @@
         <ListPreference
             android:key="jugadorEmpieza"
             android:title="¿Qué jugador empieza?"
+            android:summary="Permite empezar la partida como humano o máquina"
             android:entries="@array/players"
             android:entryValues="@array/playersValues"
             android:defaultValue="1"

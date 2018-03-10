@@ -5,9 +5,15 @@ import android.os.Bundle;
 
 public class Settings extends PreferenceActivity {
 
+    public final static String PLAY_MUSIC = "music";
+    public final static boolean PLAY_MUSIC_DEFAULT = true;
+
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.settings);
+
+        getFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new SettingsFragment()).commit();
+
     }
 }

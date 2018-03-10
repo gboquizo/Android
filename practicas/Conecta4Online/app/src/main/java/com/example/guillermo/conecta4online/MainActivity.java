@@ -3,6 +3,7 @@ package com.example.guillermo.conecta4online;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import android.preference.PreferenceManager;
@@ -10,6 +11,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextThemeWrapper;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -49,12 +51,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         queue = VolleySingleton.getInstance(this).getRequestQueue();
-
         Intent intent = getIntent();
-
         if(!intent.hasExtra("ID")){
             int turno = Integer.valueOf(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("jugadorEmpieza","1"));
             partida = new Game(turno);
@@ -147,54 +145,70 @@ public class MainActivity extends AppCompatActivity {
         this.idPartidaOnline = idPartidaOnline;
     }
 
-//    void pintarTablero(){
-//        for (int i = 0; i < arrayTablero.length; i++) {
-//            for (int j = 0; j < arrayTablero[i].length; j++) {
-//                pintarFicha(i,j,partida.tablero[i][j]);
-//            }
-//        }
-//    }
-
-    protected void onResume(){
-        if(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("musica",true));
+    @Override
+    public void onResume() {
+        if(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("musica",true))
+            Musica.play(MainActivity.this,R.raw.cancion);
         super.onResume();
-        Musica.play(MainActivity.this,R.raw.cancion);
     }
 
-    protected void onPause(){
+    @Override
+    public void onPause() {
         if(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("musica",true))
-            super.onPause();
-        Musica.stop();
+            Musica.stop();
+        super.onPause();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
         return true;
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if(id == R.id.menuAbout){
-
-            Intent about = new Intent(getApplicationContext(), About.class);
-            startActivity(about);
-
-            return true;
-        }else if (id == R.id.menuSendMessage) {
-
-            Intent sendIntent = new Intent();
-            sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, "Este es mi texto a enviar.");
-            sendIntent.setType("text/plain");
-            startActivity(sendIntent);
-
-        }else if (id == R.id.menuSettings){
-            startActivity(new Intent(this, Settings.class));
-            return true;
+        switch (item.getItemId()) {
+            case R.id.menuAbout:
+                startActivity(new Intent(this, About.class));
+                return true;
+            case R.id.menuSendMessage:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "CONECTA 4");
+                intent.putExtra(Intent.EXTRA_TEXT, "Nueva aplicación Android");
+                startActivity(intent);
+                return true;
+            case R.id.menuSettings:
+                startActivity(new Intent(this, Settings.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog dialog = crearDialogSalir();
+        dialog.show();
+    }
+
+    public AlertDialog crearDialogSalir() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AppTheme));
+        builder.setTitle("¿Desea volver al menú principal?");
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                MainActivity.this.finish();
+            }
+        });
+
+        return builder.create();
     }
 
     void pintarFicha(int fila, int columna, int turno) {
@@ -234,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
                         if (partida.estado != "Terminado")
                             jugar(j);
                         else
-                            mostrarGanador();
+                           mostrarGanador();
                     }
                     if (partida.getTurno() == Game.MAQUINA && !partida.estado.equals("Terminado")) {
                         int col = partida.maquinaRespondeMovimientoA(j);
@@ -270,6 +284,9 @@ public class MainActivity extends AppCompatActivity {
         }else if(partida.ganador =="Maquina"){
             builder.setMessage(R.string.mensajeGanadorMaquina);
 
+        }
+        else if (partida.ganador == "Empate"){
+            builder.setMessage(R.string.mensajeEmpate);
         }
         builder.setTitle(R.string.mensajeTitulo);
         builder.setPositiveButton(R.string.aceptar, new DialogInterface.OnClickListener() {
