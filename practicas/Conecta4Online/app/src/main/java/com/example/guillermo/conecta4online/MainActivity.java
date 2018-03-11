@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             setIdPartidaOnline(getIntent().getStringExtra("ID"));
         }
 
-        setTitle("Conecta 4");
+        setTitle (getString(R.string.conecta_4title));
     }
 
     public int getTurnoOnline() {
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Context context = getApplicationContext();
-                CharSequence text = "No se puede conectar con el servidor.";
+                CharSequence text = getString(R.string.conexion_incorrecta);
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Context context = getApplicationContext();
-                CharSequence text = "Error en la conexión.";
+                CharSequence text = getString(R.string.conexion_incorrecta);
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
@@ -174,8 +174,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menuSendMessage:
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_SUBJECT, "CONECTA 4");
-                intent.putExtra(Intent.EXTRA_TEXT, "Nueva aplicación Android");
+                intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.online_title));
+                intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.sendmessage));
                 startActivity(intent);
                 return true;
             case R.id.menuSettings:
@@ -194,14 +194,14 @@ public class MainActivity extends AppCompatActivity {
 
     public AlertDialog crearDialogSalir() {
         AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AppTheme));
-        builder.setTitle("¿Desea volver al menú principal?");
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setTitle(getString(R.string.salirMenu));
+        builder.setNegativeButton(getString(R.string.cancelar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
             }
         });
-        builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.salir), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 MainActivity.this.finish();
