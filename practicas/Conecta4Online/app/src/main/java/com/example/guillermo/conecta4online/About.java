@@ -8,6 +8,6 @@ public class About extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
-        setTitle("Acerca de");
+        setTitle(getString(R.string.about));
     }
 }

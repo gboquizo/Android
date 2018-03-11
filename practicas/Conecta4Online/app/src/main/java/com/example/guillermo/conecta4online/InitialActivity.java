@@ -56,8 +56,8 @@ public class InitialActivity extends AppCompatActivity {
             case R.id.menuSendMessage:
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_SUBJECT, "CONECTA 4");
-                intent.putExtra(Intent.EXTRA_TEXT, "Nueva aplicación Android");
+                intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.extra_subject));
+                intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.extra_text));
                 startActivity(intent);
                 return true;
             case R.id.menuSettings:
@@ -76,17 +76,18 @@ public class InitialActivity extends AppCompatActivity {
 
     public AlertDialog crearDialogSalir() {
         AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AppTheme));
-        builder.setTitle("¿Desea salir de Conecta 4?");
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setTitle(getString(R.string.deseasalir));
+        builder.setNegativeButton(getString(R.string.cancelar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
             }
         });
-        builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.salir), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                InitialActivity.this.finish();
+                InitialActivity.this.finishAffinity();
+
             }
         });
 

@@ -4,28 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.guillermo.conecta4online.About"
-    android:gravity="right"
+    android:gravity="end"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/titulo"
-        android:text="Conecta 4"
+        android:text="@string/conecta_4title"
         android:gravity="center_horizontal"
         android:textStyle="bold"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:layout_marginBottom="10dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:id="@+id/about"
         android:text="@string/aboutMe"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:textAlignment="gravity"
         android:layout_marginBottom="20dp"/>
 
@@ -33,35 +32,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/autor"
-        android:text="Autor: Guillermo Boquizo Sánchez"
+        android:text="@string/author_guillermo_boquizo_s_nchez"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginBottom="8dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ciclo"
-        android:text="Ciclo: 2ºDAW"
+        android:text="@string/ciclo_2_daw"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginBottom="8dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/twitter"
-        android:text="Twitter: @Chekke26"
+        android:text="@string/twitter"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginBottom="8dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/correo"
-        android:text="Correo: guillermoboquizosanchez@gmail.com"
+        android:text="@string/mail"
         android:gravity="center"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
 </LinearLayout>

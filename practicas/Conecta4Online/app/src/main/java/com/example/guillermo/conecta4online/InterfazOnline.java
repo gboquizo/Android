@@ -42,7 +42,7 @@ public class InterfazOnline extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.interfazonline);
-        setTitle("Lista partidas");
+        setTitle(getString(R.string.online_title));
         queue = VolleySingleton.getInstance(this).getRequestQueue();
         Button creaJuego = (Button) findViewById(R.id.creaJuego);
         partidas = (ListView) findViewById(R.id.partidas);
@@ -100,7 +100,7 @@ public class InterfazOnline extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 Context context = getApplicationContext();
-                CharSequence text = "Conexión correcta";
+                CharSequence text = getString(R.string.conexion_correcta);
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
@@ -109,7 +109,7 @@ public class InterfazOnline extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Context context = getApplicationContext();
-                CharSequence text = "Error en la conexión!";
+                CharSequence text = getString(R.string.conexion_incorrecta);
                 int duration = Toast.LENGTH_SHORT;
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
@@ -153,7 +153,7 @@ public class InterfazOnline extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Context context = getApplicationContext();
-                CharSequence text = "Error en la conexión!";
+                CharSequence text = getString(R.string.conexion_incorrecta);
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);

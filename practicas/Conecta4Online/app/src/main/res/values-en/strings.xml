@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Connect Four</string>
+    <string name="Online">Online</string>
+    <string name="Offline">Offline</string>
+    <string name="aceptar">New Game</string>
+
+    <string name="salir">Exit</string>
+    <string name="mensajeTitulo">Game Finished. Another game?</string>
+
+    <string name="mensajeGanadorJugador">You won!!</string>
+    <string name="mensajeGanadorMaquina">You lost, game over</string>
+    <string name="mensajeEmpate">Draw</string>
+
+    <string name="about">About</string>
+    <string name="aboutMe">Connect Four is a two-player connection game in which the players first choose a color 
+        and then take turns dropping colored discs from the top into a seven-column, six-row vertically suspended grid.\n\n
+        The pieces fall straight down, occupying the next available space within the column. 
+        The objective of the game is to connect four of one\'s own discs of the same color next 
+        to each other vertically, horizontally, or diagonally before your opponent.</string>
+    <string name="sendmessage">Send message</string>
+    <string name="settings">Settings</string>
+    <string name="ciclo_2_daw">Level: 2ºDAW</string>
+    <string name="author_guillermo_boquizo_s_nchez">Author: Guillermo Boquizo Sánchez</string>
+    <string name="conecta_4title">Connect Four</string>
+    <string name="mas">More</string>
+    <string name="animaci_n_inicial">Initial animation</string>
+    <string name="cancelar">Cancel</string>
+    <string name="deseasalir">Do you want to exit from Connect 4?</string>
+    <string name="extra_text">New Android App</string>
+    <string name="extra_subject">CONNECT 4</string>
+    <string name="online_title">Game List</string>
+    <string name="conexion_correcta">Correct connection</string>
+    <string name="conexion_incorrecta">Connection error!</string>
+    <string name="Multimedia_key">Multimedia</string>
+    <string name="Multimedia_title">Multimedia</string>
+    <string name="music_key">musica</string>
+    <string name="player_title">Music Player</string>
+    <string name="music_summary">Background music is played</string>
+    <string name="gameSettings_key">gameSettings</string>
+    <string name="gameSettingsTitle">Game Settings</string>
+    <string name="jugadorEmpieza_key">jugadorEmpieza</string>
+    <string name="jugadorEmpieza_title">Which player starts?</string>
+    <string name="jugadorEmpieza_summary">Allows starting the game as a human or machine</string>
+    <string name="mail">E-mail: guillermoboquizosanchez@gmail.com</string>
+    <string name="twitter">Twitter: @Chekke26</string>
+    <string name="salirMenu">Do you want to return to the main menu?</string>
+    <string-array name="players">
+        <item>Human</item>
+        <item>Machine</item>
+    </string-array>
+    <string-array name="playersValues">
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+</resources>

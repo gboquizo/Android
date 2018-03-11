@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
-        android:key="Multimedia"
-        android:title="Multimedia"
+        android:key="@string/Multimedia_key"
+        android:title="@string/Multimedia_title"
         >
         <CheckBoxPreference
-            android:key="musica"
-            android:title="Reproductor música"
-            android:summary="Se reproduce música de fondo"
-            android:defaultValue="false"/>
+            android:key="@string/music_key"
+            android:title="@string/player_title"
+            android:summary="@string/music_summary"
+            android:defaultValue="true"/>
     </PreferenceCategory>
 
 
     <PreferenceCategory
-        android:key="gameSettings"
-        android:title="Ajustes de juego"
+        android:key="@string/gameSettings_key"
+        android:title="@string/gameSettingsTitle"
         >
         <ListPreference
-            android:key="jugadorEmpieza"
-            android:title="¿Qué jugador empieza?"
-            android:summary="Permite empezar la partida como humano o máquina"
+            android:key="@string/jugadorEmpieza_key"
+            android:title="@string/jugadorEmpieza_title"
+            android:summary="@string/jugadorEmpieza_summary"
             android:entries="@array/players"
             android:entryValues="@array/playersValues"
             android:defaultValue="1"
