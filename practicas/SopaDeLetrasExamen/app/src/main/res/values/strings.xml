@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Sopa de letras</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="salir">Salir</string>
+    <string name="ciclo_2_daw">Ciclo: 2ºDAW</string>
+    <string name="author_guillermo_boquizo_s_nchez">Autor: Guillermo Boquizo Sánchez</string>
+    <string name="sopadeletras_title">Sopa de letras</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="deseasalir">¿Desea salir de Sopa de letras?</string>
+</resources>
